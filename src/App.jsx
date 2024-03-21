@@ -3,9 +3,7 @@ import Description from './components/Description/Description';
 function App() {
   return (
     <div>
-      <>
-        <Description />
-      </>
+      <Description />
     </div>
   );
 }
