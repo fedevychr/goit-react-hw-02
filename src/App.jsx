@@ -1,5 +1,6 @@
 import Description from './components/Description/Description';
 import Options from './components/Options/Options';
+import Notification from './components/Notification/Notification';
 import Feedback from './components/Feedback/Feedback';
 import { useState } from 'react';
 
@@ -10,11 +11,15 @@ function App() {
     setFeedbacks({ ...feedbacks, [feedbackType]: feedbacks[feedbackType] + 1 });
   };
 
+  const totalFeedback = feedbacks.good + feedbacks.neutral + feedbacks.bad;
+  console.log('totalFeedback: ', totalFeedback);
+
   return (
     <div>
       <Description />
-      <Options updateFeedback={updateFeedback} />
-      <Feedback feedbacks={feedbacks} />
+      <Options updateFeedback={updateFeedback} totalFeedback={totalFeedback} />
+      <Notification totalFeedback={totalFeedback} />
+      <Feedback feedbacks={feedbacks} totalFeedback={totalFeedback} />
     </div>
   );
 }

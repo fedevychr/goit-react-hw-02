@@ -1,10 +1,12 @@
-const Feedback = ({ feedbacks }) => {
+const Feedback = ({ feedbacks, totalFeedback }) => {
   return (
-    <ul>
-      <li>Good: {feedbacks.good}</li>
-      <li>Neutral: {feedbacks.neutral}</li>
-      <li>Bad: {feedbacks.bad}</li>
-    </ul>
+    totalFeedback !== 0 && (
+      <ul>
+        <li>Good: {feedbacks.good}</li>
+        <li>Neutral: {feedbacks.neutral}</li>
+        <li>Bad: {feedbacks.bad}</li>
+      </ul>
+    )
   );
 };
 
